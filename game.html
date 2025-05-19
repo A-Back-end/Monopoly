@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monopoly Lite</title>
+    <link rel="stylesheet" href="css/style-1.css">
+</head>
+<body>
+<div class="container">
+  <h1>🎲 Monopoly Lite</h1>
+  <h2>Current Turn: <span id="currentPlayerName">None</span></h2>
+
+  <form onsubmit="event.preventDefault(); askQuestion();">
+    <button class="button-3" onclick="askQuestion()">Draw Question Card</button>
+  </form>
+
+
+  <div class="section">
+    <h3>👥 Players</h3>
+    <ul id="playerList"></ul>
+  </div>
+
+  <div class="section">
+    <div class="board" id="board"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="eventPopup">
+  <h3 id="popupTitle"></h3>
+  <p id="popupMessage"></p>
+  <button onclick="payAndClosePopup()">💰 Pay</button>
+  <button onclick="skipAndClosePopup()">⏭ Skip Turn</button>
+</div>
+
+<div id="questionModal" style="display:none;" class="question-popup">
+    <div class="question-card" id="questionText"></div>
+    <div id="answerButtons"></div>
+    <p id="resultText" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
+  
+<div class="finish-popup" id="finishPopup">
+  <h2>🎉 Congratulations!</h2>
+  <p id="winnerMessage"></p>
+</div>
+
+<audio id="backgroundMusic" src="background.mp3" loop></audio>
+
+<button class="button-1" onclick="startGame()">Play Bg Music 🎮</button>
+
+<script src="js/Game.js">
+
+</script>
+</body>
+</html>
